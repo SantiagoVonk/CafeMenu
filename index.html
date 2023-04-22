@@ -1,0 +1,199 @@
+<!-- Step 1
+As you learned in the last few steps of the Cat Photo App, there is a basic structure needed to start building your web page.
+
+Add the <!DOCTYPE html> tag, and an html element with a lang attribute of en. -->
+
+<!DOCTYPE html>
+<html lang='en'>
+<!-- Step 2
+Add a head element within the html element, so you can add a title element. The title element's text should be Cafe Menu. -->
+
+<head>
+    <!-- Step 3
+The title is one of several elements that provide extra information not visible on the web page, but it is useful for search engines or how the page gets displayed.
+
+Inside the head element, nest a meta element with an attribute named charset set to the value utf-8 to tell the browser how to encode characters for the page. Note that meta elements are self-closing. -->
+    <meta charset='utf-8'>
+    <!-- Step 17
+For the styling of the page to look similar on mobile as it does on a desktop or laptop, you need to add a meta element with a special content attribute.
+
+Add the following within the head element:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cafe Menu</title>
+    <!-- Step 10
+Up until now, you have been limited regarding the presentation and appearance of the content you create. To start taking control, add a style element within the head element. -->
+    <!-- Step 15
+Now that you have the CSS in the styles.css file, go ahead and remove the style element and all its content. Once it is removed, the text that was centered will shift back to the left. -->
+    <!-- <style>
+        /* Step 11
+You can add style to an element by specifying it in the style element and setting a property for it like this:
+
+element {
+    property: value;
+}
+Center your h1 element by setting its text-align property to the value center. */
+        h1 {
+            text-align: center;
+        }
+        /* Step 12
+In the previous step, you used a type selector to style the h1 element. Center the h2 and p elements by adding a new type selector for each one to the existing style element. */
+        p {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+
+      /* Step 13
+You now have three type selectors with the exact same styling. You can add the same group of styles to many elements by creating a list of selectors. Each selector is separated with commas like this:
+
+selector1, selector2 {
+  property: value;
+}
+Delete the three existing type selectors and replace them with one selector list that centers the text for the h1, h2, and p elements. */
+      h1, h2, p {
+        text-align: center;
+      }
+    </style> -->
+    <!-- Step 16
+Now you need to link the styles.css file so the styles will be applied again. Nest a self-closing link element in the head element. Give it a rel attribute value stylesheet and an href attribute value of styles.css. -->
+    <link rel='stylesheet' href='styles.css'>
+    </link>
+</head>
+<!-- Step 4
+To prepare to create some actual content, add a body element below the head element. -->
+
+<body>
+    <!-- Step 20
+The div element is used mainly for design layout purposes unlike the other content elements you have used so far. Add a div element inside the body element and then move all the other elements inside the new div. -->
+    <div class='menu'>
+
+        <!-- Step 5
+    It's time to add some menu content. Add a main element within the existing body element. It will eventually contain pricing information about coffee and desserts offered by the cafe. -->
+        <main>
+            <!-- Step 6
+    The name of the cafe is CAMPER CAFE. Add an h1 element within your main element. Give it the name of the cafe in capitalized letters to make it stand out. -->
+            <h1>CAMPER CAFE</h1>
+            <!-- Step 7
+    To let visitors know the cafe was founded in 2020, add a p element below the h1 element with the text Est. 2020. -->
+    <!-- Step 61
+Now apply the established class to the Est. 2020 text. -->
+            <p class='established'>Est. 2020</p>
+            <!-- Step 66
+You can use an hr element to display a divider between sections of different content.
+
+First, add an hr element between the p element with the class established and the first section element. Note that hr elements are self closing. -->
+            <hr>
+            <!-- Step 8
+    There will be two sections on the menu, one for coffees and one for desserts. Add a section element within the main element so you have a place to put all the coffees available. -->
+            <section>
+                <!-- Step 9
+    Create an h2 element in the section element and give it the text Coffee. -->
+                <h2>Coffee</h2>
+                <!-- Step 88
+The menu looks good, but other than the coffee beans background image, it is mainly just text.
+
+Under the Coffee heading, add an image using the url https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg. Give the image an alt value of coffee icon. -->
+                <img src='https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg' alt='coffee icon'>
+                <!-- Step 29
+It’s looking good. Time to start adding some menu items. Add an empty article element under the Coffee heading. It will contain a flavor and price of each coffee you currently offer. -->
+                <!-- Step 36
+                That is kind of what you want, but now it would be nice if the flavor and price were on the same line. p elements are block-level elements, so they take up the entire width of their parent element.
+                    
+                To get them on the same line, you need to apply some styling to the p elements so they behave more like inline elements. To do that, start by adding a class attribute with the value item to the first article element under the Coffee heading.-  -->
+                <article class='item'>
+                    <!-- Step 30
+article elements commonly contain multiple elements that have related information. In this case, it will contain a coffee flavor and a price for that flavor. Nest two p elements inside your article element. The first one's text should be French Vanilla, and the second's text 3.00.    -->
+                    <!-- Step 32
+The flavors and prices are currently stacked on top of each other and centered with their respective p elements. It would be nice if the flavor was on the left and the price was on the right.
+
+Add the class name flavor to the French Vanilla p element. -->
+<!-- Step 34
+Next, you want to align the price to the right. Add a class named price to your p element that has 3.00 as its text. -->
+                    <p class='flavor'>French Vanilla</p><p class='price'>3.00</p>
+                </article>
+                <!-- Step 31
+Starting below the existing coffee/price pair, add the following coffee and prices using article elements with two nested p elements inside each. As before, the first p element's text should contain the coffee flavor and the second p element's text should contain the price.
+
+Caramel Macchiato 3.75
+Pumpkin Spice 3.50
+Hazelnut 4.00
+Mocha 4.50 -->
+<!-- Step 42
+Now that you know it works, you can change the remaining article and p elements to match the first set. Start by adding the class item to the other article elements. -->
+<!-- Step 43
+Next, position the other p elements to be on the same line with no space between them. -->
+<!-- Step 44
+To complete the styling, add the applicable class names flavor and price to all the remaining p elements. -->
+                <article class='item'>
+                    <p class='flavor'>Caramel Macchiato</p><p class='price'>3.75</p>
+                </article>
+                <article class='item'>
+                    <p class='flavor'>Pumpkin Spice</p><p class='price'>3.50</p>
+                </article>
+                <article class='item'>
+                    <p class='flavor'>Hazelnut</p><p class='price'>4.00</p>
+                </article>
+                <article class='item'>
+                    <p class='flavor'>Mocha</p><p class='price'>4.50</p>
+                </article>
+            </section>
+            <!-- Step 46
+You will come back to styling the menu in a few steps, but for now, go ahead and add a second section element below the first for displaying the desserts offered by the cafe. -->
+            <section>
+                <!-- Step 47
+Add an h2 element in the new section and give it the text Desserts. -->
+                <h2>Desserts</h2>
+                <!-- Step 90
+Add one last image under the Desserts heading using the url https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg. Give the image an alt value of pie icon. -->
+                <img src='https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg' alt='pie icon'>
+                <!-- Step 48
+Add an empty article element under the Desserts heading. Give it a class attribute with the value item. -->
+                <article class='item'>
+                    <!-- Step 49
+Nest two p elements inside your article element. The first one's text should be Donut, and the second's text 1.50. Put both of them on the same line making sure there is no space between them. -->
+<!-- Step 50
+For the two p elements you just added, add dessert as the value of the first p element's class attribute and the value price as the second p elements class attribute. -->
+                    <p class='dessert'>Donut</p><p class='price'>1.50</p>
+                </article>
+                <!-- Step 52
+Below the dessert you just added, add the rest of the desserts and prices using three more article elements, each with two nested p elements. Each element should have the correct dessert and price text, and all of them should have the correct classes.
+
+Cherry Pie 2.75
+Cheesecake 3.00
+Cinnamon Roll 2.50 -->
+                <article class='item'>
+                    <p class='dessert'>Cherry Pie</p><p class='price'>2.75</p>
+                </article>
+                <article class='item'>
+                    <p class='dessert'>Cheesecake</p><p class='price'>3.00</p>
+                </article>
+                <article class='item'>
+                    <p class='dessert'>Cinnamon Roll</p><p class='price'>2.50</p>
+                </article>
+            </section>
+        </main>
+        <!-- Step 71
+Go ahead and add another hr element between the main element and the footer element. -->
+<!-- Step 76
+Now add the bottom-line class to the second hr element so the styling is applied. -->
+        <hr class='bottom-line'>
+        <!-- Step 63
+Add a footer element below the main element, where you can add some additional information. -->
+        <footer>
+            <!-- Step 64
+Inside the footer, add a p element. Then, nest an anchor (a) element in the p that links to https://www.freecodecamp.org and has the text Visit our website. -->
+            <p><a href='https://www.freecodecamp.org'>Visit our website</a></p>
+            <!-- Step 65
+Add a second p element below the one with the link and give it the text 123 Free Code Camp Drive. -->
+<!-- Step 87
+Now apply the address class to the p element containing the street address 123 Free Code Camp Drive. -->
+            <p class='address'>123 Free Code Camp Drive</p>
+        </footer>
+    </div>
+</body>
+
+</html>
